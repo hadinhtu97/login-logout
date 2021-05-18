@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 
-import {signIn, signOut, useSession} from 'next-auth/client'
+import { signIn, signOut, useSession } from 'next-auth/client'
 
 
 const Home = () => {
@@ -16,14 +16,14 @@ const Home = () => {
             <main className={styles.main}>
                 {
                     !session && <>
-                        Not signed in <br/>
+                        Not signed in <br />
                         <button onClick={() => signIn()}>Sign in</button>
                     </>
                 }
                 {
                     session && <>
-                        Signed in as {session.user.email} <br/>
-                        <button onClick={()=>signOut()}>Sign Out</button>
+                        Signed in as {session.user.name} <br />
+                        <button onClick={() => signOut()}>Sign Out</button>
                     </>
                 }
             </main>
