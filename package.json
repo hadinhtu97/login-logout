@@ -1,7 +1,7 @@
 {
-    "name": "next-temp",
+    "name": "login-logout",
     "version": "0.0.1",
-    "description": "my app",
+    "description": "login logout with next-auth",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
@@ -11,6 +11,7 @@
     "license": "ISC",
     "dependencies": {
         "next": "^10.0.7",
+        "next-auth": "^3.23.1",
         "node-fetch": "^2.6.1",
         "react": "^17.0.1",
         "react-dom": "^17.0.1"
