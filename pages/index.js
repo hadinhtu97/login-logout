@@ -17,13 +17,16 @@ const Home = () => {
                 {
                     !session && <>
                         Not signed in <br />
-                        <button onClick={() => signIn()}>Sign in</button>
+                        <button onClick={() => signIn('github')}>Sign in with github</button> <br/>
+                        <button onClick={() => signIn('google')}>Sign in with google</button> <br/>
+                        <button onClick={() => signIn('facebook')}>Sign in with facebook</button> <br/>
                     </>
                 }
                 {
                     session && <>
                         Signed in as {session.user.name} <br />
                         <button onClick={() => signOut()}>Sign Out</button>
+                        {console.log(session.user)}
                     </>
                 }
             </main>
