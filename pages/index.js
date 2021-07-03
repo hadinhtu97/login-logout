@@ -3,6 +3,8 @@ import Head from 'next/head'
 
 import { signIn, signOut, useSession } from 'next-auth/client'
 
+import Login from '../components/login'
+
 
 const Home = () => {
 
@@ -11,23 +13,18 @@ const Home = () => {
     return (
         <>
             <Head>
-                <title>Next temp</title>
+                <title>Login - Logout</title>
             </Head>
-            <main className={styles.main}>
+            <main>
                 {
-                    !session && <>
-                        Not signed in <br />
-                        <button onClick={() => signIn('github')}>Sign in with github</button> <br />
-                        <button onClick={() => signIn('google')}>Sign in with google</button> <br />
-                        <button onClick={() => signIn('facebook')}>Sign in with facebook</button> <br />
-                    </>
+                    !session && <Login />
                 }
                 {
-                    session && <>
-                        Signed in as {session.user.name} <br />
-                        <button onClick={() => signOut()}>Sign Out</button>
-                        {console.log(session.user)}
-                    </>
+                    session && <div className={styles.main}>
+                        Wellcome, {session.user.name}! 
+                        <br/> <br/>
+                        <button className={styles.button} onClick={() => signOut()}>Sign Out</button>
+                    </div>
                 }
             </main>
         </>
